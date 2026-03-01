@@ -44,6 +44,43 @@ body {
     text-align: left;
 }
 
+.search-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff6b6b;
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+}
+
 .nav ul {
     display: flex;
     list-style: none;
@@ -70,7 +107,7 @@ body {
 
 /* 英雄区域样式 */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20shopping%20mall%20exterior%20at%20night%20with%20neon%20lights%2C%20晋江吾悦广场&image_size=landscape_16_9');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20shopping%20mall%20exterior%20at%20night%20with%20neon%20lights%20and%20Wuyue%20Plaza%20signage%2C%20晋江吾悦广场&image_size=landscape_16_9');
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -512,6 +549,43 @@ header .logo h1 {
     color: #333;
     margin-bottom: 15px;
     text-align: left;
+}
+
+.search-container {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #ff6b6b;
+}
+
+.search-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
 }
 
 .nav-links {

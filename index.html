@@ -11,6 +11,12 @@
     <header class="header">
         <div class="container">
             <h1>晋江吾悦广场</h1>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索店铺、品牌或服务..." id="searchInput">
+                    <button class="search-button" onclick="performSearch()">🔍</button>
+                </div>
+            </div>
             <nav class="nav">
                 <ul>
                     <li><a href="#about">关于我们</a></li>
@@ -41,7 +47,7 @@
                     <p>晋江吾悦广场深耕闽南本土文化，融汇现代生活时尚，贯通地域特色场景，打造极致闽南文化生活消费体验。在这里，消费者可以寻找儿时的回忆，重新发现生活的美好。</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20shopping%20mall%20exterior%20with%20glass%20facade%20and%20neon%20lights%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="晋江吾悦广场外观">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20shopping%20mall%20exterior%20at%20night%20with%20neon%20lights%20and%20Wuyue%20Plaza%20signage%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="晋江吾悦广场外观">
                 </div>
             </div>
         </div>
@@ -178,6 +184,59 @@
 
     <!-- JavaScript -->
     <script>
+        // 搜索功能
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (searchTerm) {
+                // 简单的搜索逻辑，根据关键词跳转到对应的页面
+                const searchMap = {
+                    'zara': 'shop-zara.html',
+                    'hm': 'shop-hm.html',
+                    'uniqlo': 'shop-uniqlo.html',
+                    'only': 'shop-only.html',
+                    'jack jones': 'shop-jackjones.html',
+                    'nitori': 'shop-nitori.html',
+                    'miniso': 'shop-miniso.html',
+                    'ikea': 'shop-ikea.html',
+                    'hola': 'shop-hola.html',
+                    'zara home': 'shop-zarahome.html',
+                    '海底捞': 'shop-haidilao.html',
+                    '服饰零售': 'retail-shops.html',
+                    '家居生活': 'home-shops.html',
+                    '餐饮美食': 'food-shops.html',
+                    '娱乐休闲': 'entertainment-shops.html',
+                    'b1': 'b1-shops.html',
+                    '1f': 'f1-shops.html',
+                    '2f': 'f2-shops.html',
+                    '3f': 'f3-shops.html',
+                    '4f': 'f4-shops.html',
+                    '5f': 'f5-shops.html'
+                };
+                
+                // 查找匹配的关键词
+                let found = false;
+                for (const [key, value] of Object.entries(searchMap)) {
+                    if (key.includes(searchTerm)) {
+                        window.location.href = value;
+                        found = true;
+                        break;
+                    }
+                }
+                
+                // 如果没有找到匹配的关键词，显示提示
+                if (!found) {
+                    alert('未找到相关店铺或服务，请尝试其他关键词');
+                }
+            }
+        }
+        
+        // 为搜索输入框添加回车键事件
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
         // 为商业布局和特色优势的每个项目添加点击事件
         document.querySelectorAll('.business-item, .feature-item').forEach(item => {
             item.addEventListener('click', function() {
@@ -207,6 +266,43 @@
                     // 跳转到对应的HTML文件
                     window.location.href = targetId + '.html';
                 }
+            });
+        });
+        
+        // 为图片添加点击放大功能
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                // 创建一个模态框
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '10000';
+                modal.style.cursor = 'pointer';
+                
+                // 创建放大的图片
+                const enlargedImg = document.createElement('img');
+                enlargedImg.src = this.src;
+                enlargedImg.style.maxWidth = '90%';
+                enlargedImg.style.maxHeight = '90%';
+                enlargedImg.style.objectFit = 'contain';
+                
+                // 添加到模态框
+                modal.appendChild(enlargedImg);
+                
+                // 添加到文档
+                document.body.appendChild(modal);
+                
+                // 点击模态框关闭
+                modal.addEventListener('click', function() {
+                    document.body.removeChild(modal);
+                });
             });
         });
     </script>

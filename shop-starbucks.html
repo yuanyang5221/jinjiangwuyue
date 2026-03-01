@@ -3,52 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服饰零售店铺 - 晋江吾悦广场</title>
+    <title>星巴克 - 晋江吾悦广场</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .shops-section {
+        .shop-detail-section {
             padding: 80px 0;
             background-color: #fff;
         }
-        .shops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .shop-detail-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
             margin-top: 40px;
         }
-        .shop-item {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            cursor: pointer;
+        .shop-detail-image {
+            flex: 1;
+            min-width: 300px;
         }
-        .shop-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        .shop-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        .shop-image img {
+        .shop-detail-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            border-radius: 8px;
         }
-        .shop-info {
-            padding: 20px;
+        .shop-detail-info {
+            flex: 1;
+            min-width: 300px;
         }
-        .shop-info h3 {
+        .shop-detail-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .shop-detail-info p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .shop-detail-info .shop-hours {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .shop-detail-info .shop-hours h4 {
             font-size: 18px;
             margin-bottom: 10px;
             color: #333;
         }
-        .shop-info p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
+        .shop-detail-info .shop-hours p {
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -76,62 +79,24 @@
     </header>
 
     <!-- 内容区域 -->
-    <section class="detail-section">
+    <section class="shop-detail-section">
         <div class="container">
-            <h2>服饰零售店铺</h2>
-            <div class="shops-grid">
-                <!-- 店铺1 -->
-                <div class="shop-item" onclick="window.location.href='shop-zara.html'">
-                    <div class="shop-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ZARA%20clothing%20store%20interior%20modern%20design%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="ZARA">
-                    </div>
-                    <div class="shop-info">
-                        <h3>ZARA</h3>
-                        <p>西班牙快时尚品牌，以时尚设计和合理价格著称，提供最新的流行服饰。</p>
-                    </div>
+            <h2>星巴克</h2>
+            <div class="shop-detail-content">
+                <div class="shop-detail-image">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Starbucks%20coffee%20shop%20cozy%20warm%20atmosphere%20with%20wooden%20furniture%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="星巴克">
                 </div>
-                <!-- 店铺2 -->
-                <div class="shop-item" onclick="window.location.href='shop-hm.html'">
-                    <div class="shop-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=H%26M%20clothing%20store%20bright%20modern%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="H&M">
-                    </div>
-                    <div class="shop-info">
-                        <h3>H&M</h3>
-                        <p>瑞典快时尚品牌，提供多样化的时尚选择，适合不同年龄段的消费者。</p>
-                    </div>
-                </div>
-                <!-- 店铺3 -->
-                <div class="shop-item" onclick="window.location.href='shop-uniqlo.html'">
-                    <div class="shop-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=UNIQLO%20store%20minimalist%20design%20clothing%20display%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="UNIQLO">
-                    </div>
-                    <div class="shop-info">
-                        <h3>UNIQLO</h3>
-                        <p>日本休闲服装品牌，以舒适和高品质著称，提供基本款和功能性服装。</p>
-                    </div>
-                </div>
-                <!-- 店铺4 -->
-                <div class="shop-item" onclick="window.location.href='shop-only.html'">
-                    <div class="shop-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ONLY%20women%20clothing%20store%20fashionable%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="ONLY">
-                    </div>
-                    <div class="shop-info">
-                        <h3>ONLY</h3>
-                        <p>丹麦时尚品牌，专注于女性时尚，提供潮流服饰和配饰。</p>
-                    </div>
-                </div>
-                <!-- 店铺5 -->
-                <div class="shop-item" onclick="window.location.href='shop-jackjones.html'">
-                    <div class="shop-image">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Jack%20Jones%20men%20clothing%20store%20modern%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="Jack Jones">
-                    </div>
-                    <div class="shop-info">
-                        <h3>Jack Jones</h3>
-                        <p>丹麦男装品牌，提供时尚、休闲的男士服饰，适合年轻都市男性。</p>
+                <div class="shop-detail-info">
+                    <h3>关于星巴克</h3>
+                    <p>星巴克是全球知名的咖啡连锁品牌，创立于1971年，总部位于美国西雅图。星巴克以其高品质的咖啡和舒适的用餐环境而闻名，目前在全球超过80个国家和地区拥有超过30,000家门店。</p>
+                    <p>晋江吾悦广场的星巴克门店提供多种咖啡饮品，包括美式咖啡、拿铁、卡布奇诺、摩卡等经典咖啡，以及各种季节限定饮品。店内环境舒适，适合朋友聚会、商务洽谈或个人休闲，是消费者享受咖啡时光的理想场所。</p>
+                    <div class="shop-hours">
+                        <h4>营业时间</h4>
+                        <p>周一至周日：08:00 - 22:00</p>
                     </div>
                 </div>
             </div>
-            <button class="back-button" onclick="window.location.href='index.html'">返回首页</button>
+            <button class="back-button" onclick="window.location.href='food-shops.html'">返回店铺列表</button>
         </div>
     </section>
 
@@ -148,10 +113,10 @@
                     <h4>快速链接</h4>
                     <ul>
                         <li><a href="index.html">首页</a></li>
-                        <li><a href="retail.html">服饰零售</a></li>
-                        <li><a href="home.html">家居生活</a></li>
-                        <li><a href="food.html">餐饮美食</a></li>
-                        <li><a href="entertainment.html">娱乐休闲</a></li>
+                        <li><a href="retail-shops.html">服饰零售</a></li>
+                        <li><a href="home-shops.html">家居生活</a></li>
+                        <li><a href="food-shops.html">餐饮美食</a></li>
+                        <li><a href="entertainment-shops.html">娱乐休闲</a></li>
                     </ul>
                 </div>
             </div>
@@ -180,6 +145,10 @@
                     'hola': 'shop-hola.html',
                     'zara home': 'shop-zarahome.html',
                     '海底捞': 'shop-haidilao.html',
+                    '西贝莜面村': 'shop-xibei.html',
+                    '肯德基': 'shop-kfc.html',
+                    '星巴克': 'shop-starbucks.html',
+                    '麦当劳': 'shop-mcdonalds.html',
                     '服饰零售': 'retail-shops.html',
                     '家居生活': 'home-shops.html',
                     '餐饮美食': 'food-shops.html',

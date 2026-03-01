@@ -5,23 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>餐饮美食 - 晋江吾悦广场</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .shops-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .shops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .shop-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .shop-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .shop-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .shop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .shop-info {
+            padding: 20px;
+        }
+        .shop-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .shop-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <div class="logo">
-                    <h1>晋江吾悦广场</h1>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="container">
+            <h1>晋江吾悦广场</h1>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索店铺、品牌或服务..." id="searchInput">
+                    <button class="search-button" onclick="performSearch()">🔍</button>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#business">商业布局</a></li>
-                    <li><a href="#floor">楼层布局</a></li>
-                    <li><a href="#features">项目特色</a></li>
-                </ul>
             </div>
-        </nav>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="retail-shops.html">服饰零售</a></li>
+                    <li><a href="home-shops.html">家居生活</a></li>
+                    <li><a href="food-shops.html">餐饮美食</a></li>
+                    <li><a href="entertainment-shops.html">娱乐休闲</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="shops-section">
@@ -78,10 +129,85 @@
         </div>
     </section>
 
-    <footer>
+    <!-- 页脚 -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 晋江吾悦广场. 保留所有权利.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>晋江吾悦广场</h3>
+                    <p>地址：福建省泉州市晋江市陈埭镇双龙路与鞋都路交汇处</p>
+                    <p>电话：0595-12345678</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="retail-shops.html">服饰零售</a></li>
+                        <li><a href="home-shops.html">家居生活</a></li>
+                        <li><a href="food-shops.html">餐饮美食</a></li>
+                        <li><a href="entertainment-shops.html">娱乐休闲</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 晋江吾悦广场. 保留所有权利.</p>
+            </div>
         </div>
     </footer>
+    
+    <script>
+        // 搜索功能
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (searchTerm) {
+                // 简单的搜索逻辑，根据关键词跳转到对应的页面
+                const searchMap = {
+                    'zara': 'shop-zara.html',
+                    'hm': 'shop-hm.html',
+                    'uniqlo': 'shop-uniqlo.html',
+                    'only': 'shop-only.html',
+                    'jack jones': 'shop-jackjones.html',
+                    'nitori': 'shop-nitori.html',
+                    'miniso': 'shop-miniso.html',
+                    'ikea': 'shop-ikea.html',
+                    'hola': 'shop-hola.html',
+                    'zara home': 'shop-zarahome.html',
+                    '海底捞': 'shop-haidilao.html',
+                    '服饰零售': 'retail-shops.html',
+                    '家居生活': 'home-shops.html',
+                    '餐饮美食': 'food-shops.html',
+                    '娱乐休闲': 'entertainment-shops.html',
+                    'b1': 'b1-shops.html',
+                    '1f': 'f1-shops.html',
+                    '2f': 'f2-shops.html',
+                    '3f': 'f3-shops.html',
+                    '4f': 'f4-shops.html',
+                    '5f': 'f5-shops.html'
+                };
+                
+                // 查找匹配的关键词
+                let found = false;
+                for (const [key, value] of Object.entries(searchMap)) {
+                    if (key.includes(searchTerm)) {
+                        window.location.href = value;
+                        found = true;
+                        break;
+                    }
+                }
+                
+                // 如果没有找到匹配的关键词，显示提示
+                if (!found) {
+                    alert('未找到相关店铺或服务，请尝试其他关键词');
+                }
+            }
+        }
+        
+        // 为搜索输入框添加回车键事件
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
 </body>
 </html>

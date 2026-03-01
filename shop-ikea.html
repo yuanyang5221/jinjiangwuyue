@@ -12,13 +12,19 @@
             <div class="logo">
                 <h1>晋江吾悦广场</h1>
             </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索店铺、品牌或服务..." id="searchInput">
+                    <button class="search-button" onclick="performSearch()">🔍</button>
+                </div>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#business">商业布局</a></li>
-                <li><a href="#floor">楼层布局</a></li>
-                <li><a href="#features">项目特色</a></li>
-            </ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="retail.html">服饰零售</a></li>
+                    <li><a href="home.html">家居生活</a></li>
+                    <li><a href="food.html">餐饮美食</a></li>
+                    <li><a href="entertainment.html">娱乐休闲</a></li>
+                </ul>
         </div>
     </header>
 
@@ -51,5 +57,61 @@
             <p>&copy; 2024 晋江吾悦广场. 保留所有权利.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 搜索功能
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (searchTerm) {
+                // 简单的搜索逻辑，根据关键词跳转到对应的页面
+                const searchMap = {
+                    'zara': 'shop-zara.html',
+                    'hm': 'shop-hm.html',
+                    'uniqlo': 'shop-uniqlo.html',
+                    'only': 'shop-only.html',
+                    'jack jones': 'shop-jackjones.html',
+                    'nitori': 'shop-nitori.html',
+                    'miniso': 'shop-miniso.html',
+                    'ikea': 'shop-ikea.html',
+                    'hola': 'shop-hola.html',
+                    'zara home': 'shop-zarahome.html',
+                    '海底捞': 'shop-haidilao.html',
+                    '服饰零售': 'retail-shops.html',
+                    '家居生活': 'home-shops.html',
+                    '餐饮美食': 'food-shops.html',
+                    '娱乐休闲': 'entertainment-shops.html',
+                    'b1': 'b1-shops.html',
+                    '1f': 'f1-shops.html',
+                    '2f': 'f2-shops.html',
+                    '3f': 'f3-shops.html',
+                    '4f': 'f4-shops.html',
+                    '5f': 'f5-shops.html'
+                };
+                
+                // 查找匹配的关键词
+                let found = false;
+                for (const [key, value] of Object.entries(searchMap)) {
+                    if (key.includes(searchTerm)) {
+                        window.location.href = value;
+                        found = true;
+                        break;
+                    }
+                }
+                
+                // 如果没有找到匹配的关键词，显示提示
+                if (!found) {
+                    alert('未找到相关店铺或服务，请尝试其他关键词');
+                }
+            }
+        }
+        
+        // 为搜索输入框添加回车键事件
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
 </body>
 </html>
