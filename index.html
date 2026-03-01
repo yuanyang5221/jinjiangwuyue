@@ -17,7 +17,6 @@
                     <li><a href="#business">商业布局</a></li>
                     <li><a href="#floor">楼层布局</a></li>
                     <li><a href="#features">特色优势</a></li>
-                    <li><a href="#gallery">图片展示</a></li>
                 </ul>
             </nav>
         </div>
@@ -183,8 +182,31 @@
         document.querySelectorAll('.business-item, .feature-item').forEach(item => {
             item.addEventListener('click', function() {
                 const targetId = this.getAttribute('data-target');
-                // 跳转到对应的HTML文件
-                window.location.href = targetId + '.html';
+                // 处理需要跳转到店铺列表页面的模块
+                if (targetId === 'retail') {
+                    window.location.href = 'retail-shops.html';
+                } else if (targetId === 'home') {
+                    window.location.href = 'home-shops.html';
+                } else if (targetId === 'food') {
+                    window.location.href = 'food-shops.html';
+                } else if (targetId === 'entertainment') {
+                    window.location.href = 'entertainment-shops.html';
+                } else if (targetId === 'b1') {
+                    window.location.href = 'b1-shops.html';
+                } else if (targetId === 'f1') {
+                    window.location.href = 'f1-shops.html';
+                } else if (targetId === 'f2') {
+                    window.location.href = 'f2-shops.html';
+                } else if (targetId === 'f3') {
+                    window.location.href = 'f3-shops.html';
+                } else if (targetId === 'f4') {
+                    window.location.href = 'f4-shops.html';
+                } else if (targetId === 'f5') {
+                    window.location.href = 'f5-shops.html';
+                } else {
+                    // 跳转到对应的HTML文件
+                    window.location.href = targetId + '.html';
+                }
             });
         });
     </script>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服饰零售店铺 - 晋江吾悦广场</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shops-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        .shops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .shop-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .shop-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .shop-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .shop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .shop-info {
+            padding: 20px;
+        }
+        .shop-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .shop-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="container">
+            <h1>晋江吾悦广场</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="retail.html">服饰零售</a></li>
+                    <li><a href="home.html">家居生活</a></li>
+                    <li><a href="food.html">餐饮美食</a></li>
+                    <li><a href="entertainment.html">娱乐休闲</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <section class="detail-section">
+        <div class="container">
+            <h2>服饰零售店铺</h2>
+            <div class="shops-grid">
+                <!-- 店铺1 -->
+                <div class="shop-item" onclick="window.location.href='shop-zara.html'">
+                    <div class="shop-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ZARA%20clothing%20store%20interior%20modern%20design%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="ZARA">
+                    </div>
+                    <div class="shop-info">
+                        <h3>ZARA</h3>
+                        <p>西班牙快时尚品牌，以时尚设计和合理价格著称，提供最新的流行服饰。</p>
+                    </div>
+                </div>
+                <!-- 店铺2 -->
+                <div class="shop-item" onclick="window.location.href='shop-hm.html'">
+                    <div class="shop-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=H%26M%20clothing%20store%20bright%20modern%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="H&M">
+                    </div>
+                    <div class="shop-info">
+                        <h3>H&M</h3>
+                        <p>瑞典快时尚品牌，提供多样化的时尚选择，适合不同年龄段的消费者。</p>
+                    </div>
+                </div>
+                <!-- 店铺3 -->
+                <div class="shop-item" onclick="window.location.href='shop-uniqlo.html'">
+                    <div class="shop-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=UNIQLO%20store%20minimalist%20design%20clothing%20display%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="UNIQLO">
+                    </div>
+                    <div class="shop-info">
+                        <h3>UNIQLO</h3>
+                        <p>日本休闲服装品牌，以舒适和高品质著称，提供基本款和功能性服装。</p>
+                    </div>
+                </div>
+                <!-- 店铺4 -->
+                <div class="shop-item" onclick="window.location.href='shop-only.html'">
+                    <div class="shop-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ONLY%20women%20clothing%20store%20fashionable%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="ONLY">
+                    </div>
+                    <div class="shop-info">
+                        <h3>ONLY</h3>
+                        <p>丹麦时尚品牌，专注于女性时尚，提供潮流服饰和配饰。</p>
+                    </div>
+                </div>
+                <!-- 店铺5 -->
+                <div class="shop-item" onclick="window.location.href='shop-jackjones.html'">
+                    <div class="shop-image">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Jack%20Jones%20men%20clothing%20store%20modern%20interior%2C%20晋江吾悦广场&image_size=landscape_16_9" alt="Jack Jones">
+                    </div>
+                    <div class="shop-info">
+                        <h3>Jack Jones</h3>
+                        <p>丹麦男装品牌，提供时尚、休闲的男士服饰，适合年轻都市男性。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="back-button" onclick="window.location.href='index.html'">返回首页</button>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>晋江吾悦广场</h3>
+                    <p>地址：福建省泉州市晋江市陈埭镇双龙路与鞋都路交汇处</p>
+                    <p>电话：0595-12345678</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="retail.html">服饰零售</a></li>
+                        <li><a href="home.html">家居生活</a></li>
+                        <li><a href="food.html">餐饮美食</a></li>
+                        <li><a href="entertainment.html">娱乐休闲</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 晋江吾悦广场. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
